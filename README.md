@@ -2,7 +2,7 @@
 一个基于SSM的问答社区网站
 ## 一.项目的来源
 
-## 二.项目的亮点
+## 二.项目的主要功能
 
 + ### 异步队列
 ![image](./pic/QQ图片20190223221146.png)
@@ -87,6 +87,9 @@
         return WendaUtil.getJSONString(0,String.valueOf(likeCount));
     }
 
++ ### 关注用户/粉丝
+
+![image](./pic/QQ图片20190224114119.png)
 
 
 
