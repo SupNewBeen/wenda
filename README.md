@@ -4,7 +4,26 @@
 
 ## 二.项目的主要功能
 
-+ ### 异步队列
++ ### 和前台的交互
+
++ ### 拦截器的使用
+
+![image](./pic/拦截器.png)
+
++ ### HostHolder的使用
+
+设计的理念：
+首先我们需要认清：
+
+web容器本身就是多线程的，每一个HTTP请求都会产生一个独立的线程（或者从线程池中取得创建好的线程）；
+Spring中的bean（用@Repository、@Service、@Component和@Controller注册的bean）都是单例的，即整个程序、所有线程共享一个实例；
+在
+
++ ### 登录ticket
+
++ ### 前缀树敏感词过滤
+
++ ### 异步框架
 ![image](./pic/QQ图片20190223221146.png)
 
 异步队列是使用redis的list来实现的。将需要延后处理的任务结构体序列化成字符串塞进redis的列表，另一个线程从这个列表中轮询数据进行处理。
@@ -92,6 +111,22 @@
 ![image](./pic/QQ图片20190224114119.png)
 
 
++ ### 全文搜索引擎solr
+
+中文分词:IK-Analyzer:
+
+     <!--建索引的时候使用细粒度分词-->
+     <fieldType name="text_ik" class="solr.TextField">
+        <!--索引的分词器-->
+        <analyzer type="index">
+          <tokenizer class="org.wltea.analyzer.util.IKTokenizerFactory" useSmart="false"/>
+          <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+        <!--查询的分词器-->
+        <analyzer type="query">
+          <tokenizer class="org.wltea.analyzer.util.IKTokenizerFactory" useSmart="true"/>
+        </analyzer>
+    </fieldType>
 
 
 ## 项目遇到的问题
