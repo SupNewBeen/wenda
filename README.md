@@ -79,7 +79,7 @@ afterCompletion：所有的事情都做完了回调一下。
 
 + ### 前缀树敏感词过滤
 
-![image](./pic/前缀树)
+![image](./pic/前缀树.png)
 
 + ### 异步框架
 ![image](./pic/QQ图片20190223221146.png)
